@@ -1,11 +1,7 @@
 <template>
-  <div>
-    123
-  </div>
+  <div>Orders</div>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style lang="scss" scoped></style>

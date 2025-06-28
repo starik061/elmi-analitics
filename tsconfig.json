@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "strict": false // удалить для включения линтинга ts
+    "strict": false, // удалить для включения линтинга ts
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "files": [],
   "references": [

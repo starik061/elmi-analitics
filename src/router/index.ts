@@ -1,10 +1,36 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import First from '@/components/First.vue'
+import NavLayout from '@/layouts/NavLayout.vue'
+import Incomes from '@/components/Incomes.vue'
+import Stocks from '@/components/Stocks.vue'
+import Sales from '@/components/Sales.vue'
+import Orders from '@/components/Orders.vue'
+
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: First // создадим этот файл позже
+    component: NavLayout,
+    children: [
+      {
+        path: '',
+        name: 'Incomes',
+        component: Incomes
+      },
+      {
+        path: '/orders',
+        name: 'Orders',
+        component: Orders
+      },
+      {
+        path: '/sales',
+        name: 'Sales',
+        component: Sales
+      },
+      {
+        path: '/stocks',
+        name: 'Stocks',
+        component: Stocks
+      }
+    ]
   }
 ]
 
