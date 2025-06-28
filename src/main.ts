@@ -1,14 +1,20 @@
-import './assets/main.scss'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+import App from './App.vue';
+import router from './router';
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import './assets/main.scss';
+import 'vue3-toastify/dist/index.css';
+import Vue3Toastify, { toast } from 'vue3-toastify';
 
-import App from './App.vue'
-import router from './router'
+const app = createApp(App);
 
-const app = createApp(App)
+app.use(createPinia()).use(router).use(Vue3Toastify, {
+  autoClose: 700,
+  limit: 1,
+  position: toast.POSITION.TOP_RIGHT,
+  transition: toast.TRANSITIONS.SLIDE,
+  hideProgressBar: true
+});
 
-app.use(createPinia())
-app.use(router)
-
-app.mount('#app')
+app.mount('#app');
